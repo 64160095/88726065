@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Form table demo</title>
+</head>
+<body>
+    <table>
+    <th><h3>Form Demo</h3></th>
+    <tr></tr>
+ <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/652/88726064/services/post.php">
+ <th align="left"><label for="name">ชื่อ -นามสกุล:</label></th> 
+ <th align="left"><input type="text" name="name" id="name"></th>
+
+ <tr></tr>
+ <th align="left"><label for="name">รหัสผ่าน:</label></th> 
+ <th align="left"><input type="password" name="passwd" id="passwd"></th>
+
+ <tr></tr>
+ <th align="left"><label for="sex">เพศ:</label></th>
+ <th align="left"><input type="radio" name="sex" id="sex" value="M">ชาย
+ <input type="radio" name="sex" id="sex" value="F">หญิง </th>
+ 
+ <tr></tr>
+ <th align="left"><label for="name">งานอดิเรก:</label></th> 
+ <th align="left">
+ <input type="checkbox" name="choice1" id="choice1" value="1">ดูหนัง
+ <input type="checkbox" name="choice2" id="choice2" value="2">ฟังเพลง
+ <input type="checkbox" name="choice3" id="choice3" value="3">เล่นเกม
+</th>
+ <tr></tr>
+ <th align="left"> <label for="name">ความรู้สึกตอนนี้:</label></th> 
+ <th align="left">
+ <select name="emotion">
+ <option value="0">--Select one--</option>
+ <option value="1">Happy</option>
+ <option value="2">Sad</option>
+ <option value="3">Fun</option>
+ </select>
+ </th>
+ <br>
+ <tr></tr>
+ <th valign="middle" align="left" ><label for="name">ข้อเสนอแนะ:</label></th> 
+  
+ <th>
+ <Textarea name="commmet" id="comment" rows="5" cols="50"></Textarea>
+ <br><br>
+</th>
+<tr></tr>
+<td colspan="2" rowspan="2" align="center" valign="middle"><input type="submit" value="Send">
+ <input type="reset" value="Clear">
+</td> 
+
+</table>
+</form>
+</body>
+</html>
