@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>เกมส์ทายตัวเลข</h1>
+    <p>ทายตัวเลขระหว่าง 1 ถึง 100</p>
+    <input type="text" id="guessField" placeholder="ทายตัวเลข" />
+    <input type="button" id="guessBtn" value="ส่งคำตอบ" />
+    <input type="button" id="btnRestart" value="เริ่มเกมใหม่" />
+    <div id="result"></div>
+    <div id="summary"></div>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let numGuess = 0;
+
+        const submitElm = document.querySelector("#guessBtn");
+        submitElm.addEventListener("click", function () {
+            const guessFieldElm = document.getElementById("guessField");
+            const guessField = parseInt(guessFieldElm.value);
+
+            // Check if guessField is a number
+            if (isNaN(guessField) || guessField === "") {
+                document.getElementById("result").innerHTML = "โปรดใส่ตัวเลข";
+                guessFieldElm.select();
+            } else {
+                // Compare the guessed number with the random number
+                if (guessField > randomNumber) {
+                    document.getElementById("result").innerHTML = "มากไป";
+                } else if (guessField < randomNumber) {
+                    document.getElementById("result").innerHTML = "น้อยไป";
+                } else {
+                    document.getElementById("result").innerHTML = "ถูกต้อง!";
+                    guessFieldElm.select();
+                    
+                    // Restart the game
+                    const restartElm = document.querySelector("#btnRestart");
+                    restartElm.addEventListener("click", function () {
+                        location.reload();
+                    });
+                }
+
+                // Count the number of guesses
+                numGuess++;
+                document.getElementById("summary").innerHTML = "ทายแล้ว " + numGuess + " ครั้ง";
+            }
+        });
+    </script>
+</body>
+</html>
