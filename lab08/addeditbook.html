@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book DB :: Add/Edit</title>
+    </head>
+    <body>
+        <h3>Book DB :: Add/Edit</h3>
+        <form id="bookForm">
+            <input type="hidden" id="id">
+            <label for="book_name">ชื่อหนังสือ:</label><br>
+            <input type="text" id="book_name" name="book_name" required><br>
+            <label for="book_price">ราคา:</label><br>
+            <input type="text" id="book_price" name="book_price" required><br><br>
+            <label for="book_price">ผู้แต่ง-1:</label><br>
+            <input type="text" id="book_price" name="book_price" required><br><br>
+            <label for="book_price">ผู้แต่ง-2:</label><br>
+            <input type="text" id="book_price" name="book_price" required><br><br>
+            <label for="book_price">ผู้แต่ง-3:</label><br>
+            <input type="text" id="book_price" name="book_price" required><br><br>
+            <button type="button" onclick="saveBook()">บันทึก</button>
+        </form>
+
+        <script>
+function saveBook() {
+  var id = document.getElementById("id").value;
+  var name = document.getElementById("book_name").value;
+  var price = document.getElementById("book_price").value;
+
+  if (name.trim() === "" || price.trim() === "") {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  alert("Book saved successfully!");
+}
+</script>
+    </body>
+</html>
