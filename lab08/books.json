@@ -1,0 +1,15 @@
+# สร้างข้อมูลหนังสือ
+books = [
+    {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "authors": ["J.K. Rowling", "Steve Kloves"]
+    },
+    {
+        "title": "The Lord of the Rings",
+        "authors": ["J.R.R. Tolkien", "Fran Walsh"]
+    },
+    {
+        "title": "Good Omens",
+        "authors": ["Neil Gaiman", "Terry Pratchett"]
+    }
+]
