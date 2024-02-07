@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Books</title>
+    </head>
+    <body>
+        <h2>Book DB</h2>
+        <h3>ค้นหาหนังสือ</h3>
+        <input type="text" id="search"
+            placeholder="ค้นหาโดยชื่อหนังสือ, ผู้แต่ง, หรือราคา"
+            onkeyup="searchBooks()"><br><br>
+        <div id="searchResults"></div>
+
+        <script>
+
+var books = [
+  { เลข: 1, ชื่อหนังสือ: "Book A", ราคา: 50, ผู้แต่ง: "แดง" },
+  { เลข: 2, ชื่อหนังสือ: "Book B", ราคา: 100, ผู้แต่ง: "แดง, เขียว" },
+  { เลข: 3, ชื่อหนังสือ: "Book C", ราคา: 120, ผู้แต่ง: "เขียว, น้ำเงิน, เหลือง" }
+];
+
+function searchBooks() {
+  var searchText = document.getElementById("search").value.toLowerCase();
+  var searchResults = document.getElementById("searchResults");
+  searchResults.innerHTML = "";
+
+  for (var i = 0; i < books.length; i++) {
+    var book = books[i];
+    var bookName = book["ชื่อหนังสือ"].toLowerCase();
+    var author = book["ผู้แต่ง"].toLowerCase();
+    var bookPrice = book["ราคา"].toString().toLowerCase();
+
+    if (bookName.includes(searchText) || author.includes(searchText) || bookPrice.includes(searchText)) {
+
+      var div = document.createElement("div");
+      div.innerHTML = "<strong>ชื่อหนังสือ:</strong> " + book["ชื่อหนังสือ"] + " " + ", <strong>ราคา:</strong> $" + book["ราคา"] + " " + ", <strong>ผู้แต่ง:</strong> " + book["ผู้แต่ง"] + " " +
+                      " <button onclick='deleteBook(" + book["เลข"] + ")'>Delete</button>";
+      searchResults.appendChild(div);
+    }
+  }
+}
+
+function deleteBook(id) {
+
+  var index = books.findIndex(book => book["เลข"] === id);
+
+  if (index !== -1) {
+    books.splice(index, 1);
+
+    searchBooks();
+  }
+}
+</script>
+    </body>
+</html>
