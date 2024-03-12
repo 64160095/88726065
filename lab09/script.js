@@ -3,7 +3,7 @@ const imageContainer = document.getElementById('imageContainer');
 const noImagesMessage = document.getElementById('noImagesMessage');
 const uploadForm = document.getElementById('uploadForm');
 
-const url = `https://api.thecatapi.com/v1/images/search?limit=20`;
+const url = `https://api.thedogapi.com/v1/images/search?limit=20`;
 const api_key = "DEMO_API_KEY"
 
 uploadForm.addEventListener('submit', function(event) {
