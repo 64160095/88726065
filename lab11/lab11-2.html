@@ -38,6 +38,17 @@
         <!-- <button @click="checkForm">Submit</button> -->
         <input type="submit" value="Submit">
       </p>
+      <p>
+        <label>Gender:</label>
+        <label>
+          <input type="radio" name="gender" value="Male" v-model="gender">
+          Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Female" v-model="gender">
+          Female
+        </label>
+      </p>      
     </form>
   </div>
   <script>
@@ -47,7 +58,8 @@
           errors: [],
           name: null,
           age: null,
-          movie: null
+          movie: null,
+          gender: null
         }
       },
       methods: {
@@ -55,6 +67,7 @@
           this.errors = [];
           if (!this.name) this.errors.push("Name required.");
           if (!this.age) this.errors.push("Age required.");
+          if (!this.gender) this.errors.push("Gender required.");
         }
       }
     }).mount('#app');
