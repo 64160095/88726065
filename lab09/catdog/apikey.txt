@@ -1,3 +1,0 @@
-The Cat API - API Key
-
-your-api-key
