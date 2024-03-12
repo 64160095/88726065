@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imageItem {
+    margin: 10px;
+}
+
+.imageItem img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 5px;
+}
+
+#noImagesMessage {
+    color: rgb(10, 0, 156);
+}
